@@ -14,17 +14,16 @@
         document.getElementById('primeiro').classList.add('destaque')
 
         const divs = document.getElementsByTagName('div')
-
         Array.from(divs).forEach(e => e.classList.remove('destaque'))
 
         const destaqueAll = [...divs].forEach(e => e.classList.add('destaque'))
 
         const arrayDivs = [...divs]
-        arrayDivs[2].classList.remove('destaque')
+        arrayDivs[1].classList.remove('destaque')
 
         const ultimosElementos = document.getElementsByClassName('terceiro')
         for (let e of ultimosElementos) {
-            e.classList.add('destaque')
+            e.classList.remove('destaque')
         }
     </script>
 

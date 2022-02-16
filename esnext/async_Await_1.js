@@ -1,8 +1,6 @@
 function esperarPor(tempo = 2000) {
     return new Promise(resolve => {
-        setTimeout(() => {
-            resolve()
-        }, tempo)
+        setTimeout(() => resolve(), tempo)
     })
 }
 
@@ -13,11 +11,11 @@ function retornarValor() {
 }
 
 async function retornarValorRapido() {
-    return 14
+    return 20
 }
 
 async function executar() {
-    let valor = await retornarValor()
+    let valor = /*await*/ retornarValorRapido() // ou retornarValor()
 
     await esperarPor(1500)
     console.log(`Async/Await ${valor}...`)
@@ -31,11 +29,9 @@ async function executar() {
     return valor + 3
 }
 
-executar()
+async function executarDeVerdade() {
+    const valor = /*await*/ executar()
+    console.log(valor)
+}
 
-// async function executarDeVerdade() {
-//     const v = await executar()
-//     console.log(v)
-// }
-
-// executarDeVerdade()
+executarDeVerdade()
