@@ -10,7 +10,7 @@
 <body class='conteudo exercicio'>
     <div>
         <label for="compras">Compras</label>
-        <ul id="compras" destino='escritório' data-urgencia="5" data-blabla="1">
+        <ul id="compras" destino='escritório' data-urgencia="5">
             <li>Café</li>
             <li>Água</li>
             <li>Copo Descartável</li>
@@ -19,14 +19,17 @@
     <script>
         const lista = document.querySelector('div ul[destino="escritório"]')
         console.log('Elemento ul................');
-        console.log(lista.childNodes)
+
+        console.log(lista.children)
         console.log(lista.destino); // undefined
-        console.log(lista.getAttribute('destino')) // maneira certa
-        console.log(lista.hasAttribute('destino'));
-        lista.setAttribute('destino', 'empresa')
-        console.log(lista.getAttribute('destino'))
-        lista.setAttribute('status', 'aberto')
-        lista.removeAttribute('destino')
+
+        console.log(lista.getAttribute('destino')) // maneira certa // escritório
+        console.log(lista.hasAttribute('destino')) // true
+        lista.setAttribute('destino', 'empresa') // alterado para 'empresa'
+        console.log(lista.getAttribute('destino')) // empresa
+        lista.setAttribute('status', 'aberto') // cria um novo atributo
+        lista.removeAttribute('destino') // remove o atributo 'destino'
+        
         console.log(lista.dataset.urgencia);
         lista.dataset.urgencia = 4
         console.log(lista.getAttribute('data-urgencia'));

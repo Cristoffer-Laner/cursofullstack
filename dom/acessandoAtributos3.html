@@ -17,17 +17,18 @@
     </div>
     <script>
 
-        // somente leitura, não pode modificar os itens
+        // somente leitura, não é possível modificar os itens
         const lista = document.querySelector('#compras')
         console.log(lista.attributes);
         console.log(lista.attributes[0]);
+        console.log(lista.attributes.id);
         console.log(lista.attributes[1]);
-        console.log(lista.attributes[2]);
         console.log(lista.attributes.destino);
+        console.log(lista.attributes[2]);
         console.log(lista.attributes['data-urgencia']);
 
-        lista.attributes.destino = 'eu'
-        console.log(lista.attributes.destino);
+        lista.attributes.destino = 'APÊ' // erro, não permite modificar
+        console.log(lista.attributes.destino); // escritório
     </script>
 </body>
 

@@ -14,23 +14,29 @@
     <script>
         const div = document.querySelector('div')
         const classes = div.classList
+
         classes.add('destaque')
         classes.remove('destaque')
         classes.toggle('destaque')
-        console.log(classes.contains('destaque'))
-        console.log(classes.length)
+
+        console.log(classes.contains('destaque')) // true
+        console.log(classes.length) // 1
         classes.toggle('destaque')
-        console.log(classes.length)
+        console.log(classes.length) // 0
+
 
         classes.add('destaque1')
         classes.add('destaque2')
-        console.log(classes.length)
+        console.log(classes.length) // 2
+        console.log(classes[1]); // destaque2
+
+        console.log(classes)
 
         for(let c of classes) {
-            console.log(c)
+            console.log(c) // destaque1, destaque2
         }
 
-        classes.forEach(e => console.log(e))
+        classes.forEach(e => console.log(e)) // destaque1, destaque2
 
     </script>
 </body>
