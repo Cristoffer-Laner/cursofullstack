@@ -9,8 +9,7 @@
 
 <body class="conteudo exercicio">
     <div>
-        <!-- onclick="navegarEm5s(event)" -->
-        <a wait5s href="https://google.com.br">Google</a>
+        <a await5s href="https://google.com.br">Google</a>
     </div>
     <script>
         function navegarEm5s (e) {
@@ -22,10 +21,19 @@
             }, 5000)
         }
 
-        // const a = document.querySelector('a')
-        // a.onclick = navegarEm5s
+        const body = document.querySelector('body')
 
-        const a = document.querySelector('[wait5s]')
-        a.onclick = navegarEm5s
+        const div2 = document.createElement('div')
+
+        const createA = document.createElement('a')
+        createA.href = 'https://www.facebook.com/'
+        createA.setAttribute('await5s', '')
+        createA.innerHTML = 'Facebook'
+
+        div2.appendChild(createA)
+        body.appendChild(div2)
+
+        const selectA = document.querySelectorAll('a[await5s]')
+        selectA.forEach(element => element.onclick = navegarEm5s)
     </script>
 </body>
